@@ -309,7 +309,7 @@
         <figure>
           <img src="static/images/LVSA.png" style="width:100%" alt="Figure 3">
         </figure>
-        <p>We presented a theoretical framework for constructing LVSA, incorporating both conceptual and operational theories to simulate human-like, personalized performance. This framework is grounded in the physiological, cognitive, social-emotional, and moral-spiritual characteristics of early adolescence (ages 10-15), a phase of significant developmental change. To enhance the construction of LVSA, we introduce key practical dimensions—question-answer types, personality traits, learning stages, response styles, and generation sources—that guide the modeling process.</p>
+        <p>We presented a theoretical framework for constructing LVSA, incorporating both conceptual and operational theories to simulate human-like, personalized performance. This framework is grounded in the physiological, cognitive, social-emotional, and moral-spiritual characteristics of early adolescence (ages 10-15), a phase of significant developmental change. To enhance the construction of LVSA, we introduce key practical dimensions—question-answer types, personality traits, learning stages, response styles, and generation sources—that guide the modeling process. Specifically, to enhance the personalized expression of student personalities in this study and to fully explore the potential of LLMs in constructing LVSA, we utilized five personality types that differed widely: <b>High Neuroticism</b> (<b>HN</b>), <b>High Extraversion</b> (<b>HE</b>), <b>High Agreeableness</b> (<b>HA</b>), <b>Low Conscientiousness</b> (<b>LC</b>), and <b>Low Openness</b> (<b>LO</b>).</p>
         <figure>
           <img src="static/images/f3_2.png" style="width:100%" alt="Figure 4">
         </figure>
@@ -317,8 +317,11 @@
         <figure>
           <img src="static/images/wordcloud-en_00.png" style="width:100%" alt="Figure 5">
         </figure>
-        <p>To model LVSA, we constructed a fine-tuning dataset aligned with the Basic Chinese Understanding Ability Evaluation Dataset, incorporating data from real classroom video recordings, textbook content, and teacher-prepared lesson plans. The dataset construction involved several key stages to ensure realistic and personalized dialogues, including data preparation, prompt design, expert revision, large-scale dialogue generation based on the Big Five personality traits, and the creation of fine-tuning datasets.</p>
-      <div style="text-align:center">
+        <p>After generating fine-tuning student-teacher dialogues based on the Big Five personality traits, word cloud visualizations were used to analyze students' expression styles and lexical richness. The word cloud for <b>HE</b> highlights frequent use of self-referential and positive language, suggesting extraverted students who engage in social interaction. <b>HN</b> shows hesitancy and uncertainty, marked by emotional fluctuation and nervousness. <b>LO</b> predominantly uses conservative and structured language, indicating a reliance on established knowledge. <b>HA</b> emphasizes cooperation, empathy, and warmth, while LC reflects imprecise and disorganized expression, characteristic of lower conscientiousness. These findings align with existing research on how language style reflects cognitive abilities and personality traits, validating the uniqueness and effectiveness of the fine-tuning dataset used for LVSA construction.</p>
+        <p>The fine-tuning process was conducted using a high-performance setup, enabling the LLM to personalize the generated responses for each student personality type. Results show that after fine-tuning, the models demonstrated improved linguistic capabilities, with LVSA responses better aligned with targeted personality traits and classroom dialogue styles.</p>
+      
+      
+        <div style="text-align:center">
         <h2 class="title is-3">Overall Evaluation for LVLMs</h2>
       </div>
       <div class="content has-text-justified">

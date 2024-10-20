@@ -280,19 +280,23 @@
   
 
       <div style="text-align:center">
-        <h2 class="title is-3">Construction of the FIOVA Dataset</h2>
+        <h2 class="title is-3">Scene: Basic Chinese Understanding Ability in Education</h2>
       </div>
+      <figure>
+        <img src="static/images/Scene.png" style="width:100%" alt="Figure 1">
+      </figure>
       <div class="content has-text-justified">
         <br>
-        <p>We propose the FIOVA dataset, designed to comprehensively evaluate video comprehension. FIOVA includes 3,002 video sequences covering 38 diverse themes, each annotated by <b>five distinct annotators</b> to capture a wide range of human perspectives. The dataset is unique in its length and detail, providing <b>4-15 times longer descriptions</b> than existing benchmarks. Additionally, FIOVA addresses human variability by consolidating multiple annotations into a groundtruth baseline, thus facilitating detailed human-machine comparisons in video description tasks.</p>
+        <p>We investigate the potential of four foundational models—InternVL, LLaVa, MiniCPM, and Qwen—to simulate student performance in junior high school Chinese education, focusing on early adolescence (ages 10-15), a phase marked by the transition from concrete to abstract thinking and associated cognitive and linguistic challenges. Junior high school Chinese education emphasizes expression, emotional experience, and value formation, aligning well with LLMs' strengths in natural language processing. This context provides an ideal setting to evaluate whether virtual student models can authentically replicate human-like performance, including language style, emotional responses, and value-driven interactions. Thus, our primary research question is: <em><b>Do foundation models possess basic comprehension abilities for middle school language subjects?</b></em></p>
+        <p>To answer this question, we first built the Basic Chinese Understanding Ability Dataset, sourced from the National Smart Education Platform, which measures text comprehension (613 items) and memorization (438 items) skills. Results show that (1) InternVL achieved the highest average accuracy (0.747), followed by MiniCPM (0.700), while Qwen and LLaVa averaged 0.599 and 0.444, respectively. (2) The lower performance of Qwen and LLaVa likely reflects their design focus on multimodal tasks, limiting their effectiveness in Chinese language processing.</p>
 
       </div>
       <div class="columns is-centered">
         <!-- <img style='height: auto; width: 90%; object-fit: contain' src="static/images/f2.png"
           alt="overview_image"> -->
-          <figure>
-            <img src="static/images/t1.png" alt="Table 1">
-          </figure>
+          <!-- <figure>
+            <img src="static/images/LVSA.png" alt="Table 1">
+          </figure> -->
       </div>
       <br>
 

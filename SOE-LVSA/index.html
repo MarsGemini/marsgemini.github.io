@@ -330,7 +330,7 @@
       </div>
       <div class="columns is-centered">
           <figure>
-            <img src="static/images/t2.png" alt="Figure 6">
+            <img src="static/images/SED.png" alt="Figure 6">
           </figure>
       </div>
       <div class="content has-text-justified">
@@ -339,11 +339,11 @@
       </div>
 
       <div class="research-box">
-        <strong>Research Question2: </strong> <em>Are the LVSA easily recognizable by humans?</em>
+        <strong>Research Question2: </strong> <em>Are the LLM-based virtual student agents easily recognizable by humans?</em>
       </div>
       <div class="content has-text-justified">
         <br>
-        <p><b>Human Turing Test: </b>The Human Turing Test aimed to assess whether human evaluators could distinguish between LVSA-generated dialogues and real student responses. Participants, acting as judges, evaluated 120 teacher-student dialogues while verbalizing their thought processes. Fleiss’s Kappa score of 0.6917 indicated substantial agreement among participants, with fine-tuned LVSA achieving an average recognition rate above 90%, closely resembling real students. In some cases, LVSA with traits like high neuroticism, low conscientiousness, and low openness were more difficult to distinguish from real students, demonstrating the effectiveness of the models in emulating human-like language behaviors.</p>
+        <p><b>Human Turing Test: </b>The Human Turing Test aimed to assess whether human evaluators could distinguish between LVSA-generated dialogues and real student responses. Participants, acting as judges, evaluated 120 teacher-student dialogues while verbalizing their thought processes. <b><em>Fleiss’s Kappa score of 0.6917 indicated substantial agreement among participants, with fine-tuned LVSA achieving an average recognition rate above 90%, closely resembling real students.</em></b> In some cases, LVSA with traits like high neuroticism, low conscientiousness, and low openness were more difficult to distinguish from real students, demonstrating the effectiveness of the models in emulating human-like language performance.</p>
       </div>
       <div class="columns is-centered">
         <figure>
@@ -356,6 +356,27 @@
         </figure>
       </div>
 
+      <div class="research-box">
+        <strong>Research Question3: </strong> <em>Does GPT-4 have the same evaluation ability as humans?</em>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Human-GPT4 Comparison Validation: </b>In the Human-GPT4 Comparison Validation, GPT-4's evaluation capabilities were compared to human evaluators by integrating interview data covering emotional integration, cognitive level, psychological state, and verbal expression into its prompts. Using a chain-of-thought (CoT) approach, GPT-4 achieved an average evaluation score of 0.978, closely aligning with human judgments across five personality traits. <b><em>The overall Fleiss’s Kappa of 0.6806 indicated substantial agreement between GPT-4 and human evaluators, confirming GPT-4’s reliability in assessing virtual student responses.</em></b></p>
+      </div>
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+        </figure>
+      </div>
+
+      <div class="research-box">
+        <strong>Research Question4: </strong> <em>How about the performance of LLM-based Virtual Student agents in the large-scaled evaluation?</em>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Evaluation results for different LVSA types: </b>The average evaluation score for the five personality types significantly increased from 36.76% to 72.51% post-fine-tuning, highlighting LLMs’ capability in generating realistic and personalized behaviors. Paired t-tests confirmed the statistical significance of these improvements, with p-values well below 0.05 for all models. <b><em>An analysis of different personality types revealed that, except for students with LC, all types showed significant gains post-fine-tuning.</em></b> Virtual students with HA exhibited the most notable improvements, with p-values below 0.001, indicating strong statistical significance.
+          </p>
+      </div>
       <div class="columns is-centered">
         <figure>
           <img src="static/images/HTT_GPT4.png" alt="Table 2">
@@ -363,8 +384,24 @@
       </div>
       <div class="content has-text-justified">
         <br>
-        <p><b>HUman-GPT4 Comparison Validation: </b>In the Human-GPT4 Comparison Validation, GPT-4's evaluation capabilities were compared to human evaluators by integrating interview data covering emotional integration, cognitive level, psychological state, and verbal expression into its prompts. Using a chain-of-thought (CoT) approach, GPT-4 achieved an average evaluation score of 0.978, closely aligning with human judgments across five personality traits. The overall Fleiss’s Kappa of 0.6806 indicated substantial agreement between GPT-4 and human evaluators, confirming GPT-4’s reliability in assessing virtual student responses.</p>
+        <p><b>Evaluation results for different learning stages: </b>On average, the performance of all four models improved by 36.03%, with paired t-tests showing p-values below 0.001, indicating highly statistically significant improvements. <b><em>These results suggest that fine-tuning based on learning stages is more straightforward compared to virtual student personality traits due to the structured and hierarchical nature of learning stage data.</em></b> Each stage has clearly defined teaching content and cognitive benchmarks, allowing the models to recognize and adapt to these relationships effectively during fine-tuning. In contrast, modeling student personalities is more complex, as personality traits are fluid and context-dependent, lacking explicit hierarchical structures, making the fine-tuning process more challenging. 
+          </p>
       </div>
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+        </figure>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Evaluation results for different LVSA types: </b>In the Human-GPT4 Comparison Validation, GPT-4's evaluation capabilities were compared to human evaluators by integrating interview data covering emotional integration, cognitive level, psychological state, and verbal expression into its prompts. Using a chain-of-thought (CoT) approach, GPT-4 achieved an average evaluation score of 0.978, closely aligning with human judgments across five personality traits. The overall Fleiss’s Kappa of 0.6806 indicated substantial agreement between GPT-4 and human evaluators, confirming GPT-4’s reliability in assessing virtual student responses.</p>
+      </div>
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+        </figure>
+      </div>
+
 
     </div>
 

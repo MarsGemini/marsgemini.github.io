@@ -152,17 +152,19 @@ body {
 .research-box {
   border: 1px solid #ddd; /* 边框颜色 */
   padding: 15px; /* 内边距 */
-  background-color: #f9f9f9; /* 背景颜色 */
+  background-color: #ffff99; /* 背景颜色：浅黄色 */
   border-radius: 8px; /* 圆角 */
   font-family: 'Arial', sans-serif; /* 字体 */
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* 阴影 */
+  text-align: center; /* 居中对齐 */
+  margin: 20px auto; /* 让盒子水平居中 */
+  width: 80%; /* 盒子的宽度 */
 }
 .research-box strong {
   font-weight: bold;
 }
 .research-box em {
   font-style: italic;
-}
 
 #interpolation-image-wrapper {
   width: 100%;

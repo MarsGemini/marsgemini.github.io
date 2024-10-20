@@ -1,1 +1,573 @@
-Hello world
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="FIOVA (Five-in-One Video Annotations) Benchmark">
+  <meta name="keywords" content="Video Caption, Video Understanding, LVLM Evaluation, Human-machine Comparison">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIOVA (Five-in-One Video Annotations) Benchmark</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<!-- <meta name="generator" content="Jekyll v3.9.3" /> -->
+<meta property="og:title" content="FIOVA (Five-in-One Video Annotations) Benchmark" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://huuuuusy.github.io/fiova/" />
+<meta property="og:url" content="https://huuuuusy.github.io/fiova/" />
+<meta property="og:site_name" content="FIOVA (Five-in-One Video Annotations) Benchmark" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://huuuuusy.github.io/fiova/static/images/logo.png" />
+<!-- <meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="FIOVA (Five-in-One Video Annotations) Benchmark" />
+<meta name="twitter:description" content="FIOVA (Five-in-One Video Annotations) Benchmark." />
+<meta name="twitter:site" content="@CanyuChen3" />
+<meta name="twitter:image" content="https://huuuuusy.github.io/fiova/static/images/logo.png" /> -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"FIOVA (Five-in-One Video Annotations) Benchmark","name":"FIOVA (Five-in-One Video Annotations) Benchmark","url":"https://huuuuusy.github.io/fiova/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .grey-box {
+        background-color: #c0c0c0; /* Grey color */
+        color: rgb(70, 70, 70); /* White text color */
+        padding: 20px; /* Padding inside the box */
+        margin: 20px; /* Margin outside the box */
+        text-align: center; /* Center the text */
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img src="static/images/logo_1.png" alt="FIOVA (Five-in-One Video Annotations) Benchmark" width="900"/>
+            <h1 class="title is-4 publication-title">This initiative aims to evaluate the gap between human and machine video understanding by benchmarking LVLMs against comprehensive human annotations.
+            </h1>
+            <h1 class="title is-5 publication-title">(Contact: <a href="https://huuuuusy.github.io/" target="_blank">Shiyu Hu</a> and <a href="https://xuchen-li.github.io/" target="_blank">Xuchen Li</a>)
+            </h1>
+
+            <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+            <h2 class="head-h2" style="margin-bottom: 0.5em;color: rgb(255, 93, 93)">
+              Latest News
+            </h2>
+                <li>
+                    [2024.10.18] The home page has been released! More information will be available soon.
+                </li>
+            </div>
+            </div>
+            </div>
+            </ul>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 id="Can-LVLMs-Describe-Videos-Like-Humans" class="title is-2 publication-title">Can LVLMs Describe Videos Like Humans? A Five-in-One Video Annotations Benchmark
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://huuuuusy.github.io/">Shiyu Hu*</a>,</span>
+              <span class="author-block">
+                <a href="https://xuchen-li.github.io/">Xuchen Li*</a>,</span>
+              <span class="author-block">
+                <a href="https://xuzhaoli.github.io/">Xuzhao Li</a>,</span>
+              <span class="author-block">
+                Jing Zhang,</span>
+              <span class="author-block">
+                <a href="https://github.com/updateforever">Yipei Wang</a>,</span>
+              <span class="author-block">
+                <a href="https://www.xinzhaoai.com/">Xin Zhao✉️</a>,</span>
+              <span class="author-block">
+                <a href="https://dr.ntu.edu.sg/cris/rp/rp02319">Kang Hao Cheong✉️</a></span>
+            </div>
+
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Illinois Institute of Technology</span>
+            </div> -->
+            
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=ccxD4mtkTU" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Publication</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2309.13788.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2309.13788" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/llm-misinformation/llm-misinformation/"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Dataset and Code</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://www.youtube.com/live/4Tt4GYQ-ksk?si=JYX4PkBq8YzOLMG0&t=5243" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Talk</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://drive.google.com/file/d/12SbWsh6N_-a2-y-ZljDMCoMRq8z1yNO4/view?usp=sharing"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </span>
+                    <span>Slides 1</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://drive.google.com/file/d/1L65fdYwxQIX64ibbzrA8hCbv0EWglGL5/view?usp=sharing"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </span>
+                    <span>Slides 2</span>
+                    </a>
+                </span>
+                <br>
+                <span class="link-block">
+                  <a href="https://zhuanlan.zhihu.com/p/678425256"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-zhihu"></i>
+                    </span>
+                    <span>post</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://x.com/CanyuChen3/status/1749337997340790955?s=20"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>post</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://www.linkedin.com/posts/canyu-chen-1b2415100_iclr2024-misinformation-llm-activity-7155088736353972224--5Ng?utm_source=share&utm_medium=member_desktop"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </span>
+                    <span>post</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/llm-misinformation/llm-misinformation/tree/main/experiment/data"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                    </a>
+                  </span>
+              </div>
+            </div>
+            <div class="is-size-5 publication-authors">
+              Published at <b><i>Proceedings of ICLR 2024</i></b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="columns is-centered">
+              <figure>
+                <img src="static/images/f1.png" style="width:75%" alt="Figure 0">
+              </figure>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <br>    <br>
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Large vision-language models (LVLMs) have made significant strides in addressing complex video tasks, sparking researchers' interest in their human-like multimodal understanding capabilities. Video description serves as a fundamental task for evaluating video comprehension, necessitating a deep understanding of spatial and temporal dynamics, which presents challenges for both humans and machines. Thus, investigating <b>whether LVLMs can describe videos as comprehensively as humans</b>—through reasonable human-machine comparisons using video captioning as a proxy task—will enhance our understanding and application of these models. However, current benchmarks for video comprehension have notable limitations, including short video durations, brief annotations, and reliance on a single annotator's perspective. These factors hinder a comprehensive assessment of LVLMs' ability to understand complex, lengthy videos and prevent the establishment of a robust human baseline that accurately reflects human video comprehension capabilities. To address these issues, we propose a novel benchmark, <b>FIOVA</b> (<b>F</b>ive <b>I</b>n <b>O</b>ne <b>V</b>ideo <b>A</b>nnotations), designed to evaluate the differences between LVLMs and human understanding more comprehensively. FIOVA includes 3,002 long video sequences (averaging 33.6 seconds) that cover diverse scenarios with complex spatiotemporal relationships. Each video is annotated by five distinct annotators, capturing a wide range of perspectives and resulting in captions that are 4~15 times longer than existing benchmarks, thereby establishing a robust baseline that represents human understanding comprehensively for the first time in video description tasks. Using the FIOVA benchmark, we conducted an in-depth evaluation of six state-of-the-art LVLMs (VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video), comparing their performance with humans. Results show that while current LVLMs demonstrate some perception and reasoning capabilities, they still struggle with information omission and descriptive depth. Moreover, we found significant discrepancies between LVLMs and humans in complex videos, particularly where human annotators exhibited substantial disagreement, whereas LVLMs tended to rely on uniform strategies for challenging content. These findings underscore the limitations of using a single human annotator as the groundtruth for evaluation and highlight the need for new evaluation perspectives. We believe this work offers valuable insights into the differences between LVLMs and humans, ultimately guiding future advancements toward human-level video comprehension.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </section>
+  <section class="section"> -->
+    <br>
+    <br>
+    <div class="container is-max-desktop">
+      <!-- Method -->
+      <!-- <br /> -->
+      <div style="text-align:center">
+        <h2 class="title is-3">Our Contributions</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+          <p>(1) <b>Comprehensive dataset construction:</b> We curated a dataset of 3,002 long video sequences (averaging 33.6 seconds) that cover diverse scenarios with complex spatiotemporal relationships. Each video is annotated by five distinct annotators, capturing a wide range of human perspectives and resulting in captions that are 4 to 15 times longer than existing benchmarks, establishing a robust baseline that comprehensively represents human understanding in video description tasks (see Section 2).</p>
+          <p>(2) <b>Evaluation of state-of-the-art LVLMs:</b> We conducted an in-depth evaluation of six representative open-source LVLMs (VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video), ensuring our evaluation reflects the latest advancements in the field. Additionally, we applied diverse processing techniques to model outputs, enabling a more comprehensive assessment of their capabilities and limitations (see Section 3).</p>
+          <p>(3) <b>Fine-grained human-machine comparative analysis:</b> Leveraging the FIOVA benchmark, we performed detailed experiments to analyze the differences between LVLMs and human annotations across various aspects of video comprehension. This comparative study offers critical insights into the limitations of LVLMs and underscores the need for new evaluation perspectives that capture semantic understanding, fluency, and content relevance (see Section 4).</p>
+        <br>
+
+        <br>
+  
+
+      <div style="text-align:center">
+        <h2 class="title is-3">Construction of the FIOVA Dataset</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>We propose the FIOVA dataset, designed to comprehensively evaluate video comprehension. FIOVA includes 3,002 video sequences covering 38 diverse themes, each annotated by <b>five distinct annotators</b> to capture a wide range of human perspectives. The dataset is unique in its length and detail, providing <b>4-15 times longer descriptions</b> than existing benchmarks. Additionally, FIOVA addresses human variability by consolidating multiple annotations into a groundtruth baseline, thus facilitating detailed human-machine comparisons in video description tasks.</p>
+
+      </div>
+      <div class="columns is-centered">
+        <!-- <img style='height: auto; width: 90%; object-fit: contain' src="static/images/f2.png"
+          alt="overview_image"> -->
+          <figure>
+            <img src="static/images/t1.png" alt="Table 1">
+          </figure>
+      </div>
+      <br>
+
+      <div class="content has-text-justified">
+        <br>
+        <p>We assess the quality of human-generated video captions by evaluating them across five key dimensions: consistency, context, correctness, detail orientation, and temporality. Each dimension is scored on a scale of 1 to 10, offering a comprehensive evaluation of how well the captions capture the video’s content. Using GPT, the captions are analyzed for coherence, accuracy, and chronological order. Additionally, we measure variability in annotations through a coefficient of variation (CV) to identify discrepancies among annotators, helping to classify videos based on the level of human agreement and disagreement. This assessment provides a multidimensional baseline for comparing LVLM-generated captions with human annotations.</p>
+        <p>To create a reliable reference for evaluation, we synthesize the five human-generated captions for each video into a single comprehensive groundtruth using GPT. This process integrates key elements from each annotation, balancing diversity of perspectives with consistency and coherence. The groundtruth is designed to capture the most critical details of the video while maintaining chronological and contextual accuracy. This consolidated groundtruth serves as a robust baseline for comparing LVLM outputs, ensuring that no important details are overlooked in the evaluation of machine-generated captions.</p>
+
+      </div>
+      <div class="columns is-centered">
+        <!-- <img style='height: auto; width: 90%; object-fit: contain' src="static/images/f2.png"
+          alt="overview_image"> -->
+          <figure>
+            <img src="static/images/f4.png" alt="Figure 4">
+          </figure>
+      </div>
+      <br>
+
+
+      <div style="text-align:center">
+        <h2 class="title is-3">LVLMs Response Collection</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>We collected video captions generated by six state-of-the-art Large Vision-Language Models (LVLMs): VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video. Each model processed the same set of 3,002 videos, generating captions based on their visual understanding. The LVLMs were fine-tuned with specific configurations to optimize performance in video captioning tasks. We then compiled a comprehensive dataset of video-description-response pairs, which allows for detailed comparisons between the human groundtruth and model-generated captions. This collection enables a robust analysis of how well LVLMs understand and describe complex video content.</p>
+
+      
+      <div style="text-align:center">
+        <h2 class="title is-3">Overall Evaluation for LVLMs</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>In the overall evaluation, we assess the performance of six LVLMs—VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video—using traditional metrics such as BLEU, GLEU, and METEOR, as well as the AutoCQ framework, which focuses on event-based evaluation. The results show that while models like Tarsier and VideoLLaMA2 excel in covering key events, they often struggle with descriptive precision and omit important details. On the other hand, ShareGPT4Video achieved the highest precision but lacked comprehensiveness, frequently omitting crucial information. The findings highlight the trade-off between accuracy and completeness, underscoring the need for models that can both capture critical events and provide detailed, fluent descriptions.</p>
+      </div>
+      <div class="columns is-centered">
+          <figure>
+            <img src="static/images/t2.png" alt="Table 2">
+          </figure>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <h2 class="title is-3">Batch Score Evaluation for LVLMs</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>The batch score evaluation divides the dataset into eight sub-groups based on the complexity and variability of video descriptions. We rank the LVLMs across these groups, analyzing their ability to handle both simple and complex videos. Tarsier consistently performs well in capturing temporal changes and maintaining coherence, especially in groups with frequent scene transitions. However, all models show a significant performance drop when dealing with the most complex videos (Group H), characterized by high variability in human annotations. This evaluation results based on various sub-groups and metrics highlight the models' varying strategies—some prioritize completeness, while others focus on precision—demonstrating the need for balanced models capable of handling diverse video scenarios.</p>
+      </div>
+      <div class="columns is-centered">
+          <figure>
+            <img src="static/images/f7.png" alt="Figure 7">
+          </figure>
+      </div>
+      <br>
+
+
+      <div style="text-align:center">
+        <h2 class="title is-3">Batch Ranking for LVLMs and Humans</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>The batch ranking for LVLMs is based on calculating the coefficient of variation (CV) across different video groups to assess performance consistency. Results show that in simpler videos (Groups A and B), models exhibited higher variability, reflecting divergent strategies. As complexity increased (Groups F to H), CV values decreased, indicating more consistent but less diverse outputs. Human annotations were more consistent in simpler videos, while models outperformed humans in consistency for the most complex videos (Group H). This analysis highlights how models tend to adopt uniform strategies in complex situations, while human descriptions are more diverse. Tarsier ranked highest overall, particularly in handling complex scenarios, while ShareGPT4Video excelled in precision but sacrificed completeness in complex videos. This analysis highlights the trade-off between precision and recall, emphasizing the need for balanced models that can handle diverse video content effectively.</p>
+      </div>
+      <div class="columns is-centered">
+          <figure>
+            <img src="static/images/f8.png" alt="Figure 8">
+          </figure>
+      </div>
+      <br>
+
+      <br />
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div style="text-align:center">
+            <h2 class="title is-3">More Specific Examples</h2>
+          </div>
+          <br />
+
+          <div class="control has-icons-left">
+            <div class="select is-medium is-info is-rounded ">
+              <select id="dropdown" onchange="changeContent()" style="width:auto">
+                <option value="example_1">Example 1</option>
+                <option value="example_2">Example 2</option>
+                <option value="example_3">Example 3</option>
+                <option value="example_4">Example 4</option>
+                <option value="example_5">Example 5</option>
+                <option value="example_6">Example 6</option>
+              </select>
+              <div class="icon is-small is-left">
+                <i class="fas fa-comment-alt"></i>
+              </div>
+            </div>
+         </div>
+          <!--/ Dropdown -->
+
+          <!-- Content -->
+          <div id="example_1" class="content-section">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa12.png" alt="Figure A12">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">Human performance is relatively consistent, but there is significant variation among models, indicating that the models have poor descriptive ability in these scenarios. In some simple scenarios, humans are not only able to quickly capture key content in videos and describe it effectively, but also show a high degree of consistency. In contrast, LVLMs often struggle to grasp key details when handling such videos, leading to inadequate descriptive ability. This difficulty primarily stems from the models' limitations in understanding the overall context and interconnections within the video, particularly in integrating video events with background information. As a result, these models often fail to match human performance in terms of narrative coherence and accuracy.</pre>
+              </p>
+            </div>
+          </div>
+
+          <div id="example_2" class="content-section"  style="display:none">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa13.png" alt="Figure A13">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">There is no significant difference in performance between the models and humans. When key content in a video is very obvious and easy to identify (such as someone playing baseball or a clear change of scenery), LVLMs can quickly capture these elements just like humans and generate corresponding descriptions. This type of video primarily relies on intuitive visual information rather than deep contextual or cultural background.</pre>
+              </p>
+            </div>
+          </div>
+
+          <div id="example_3" class="content-section"  style="display:none">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa14.png" alt="Figure A14">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">There is a significant variation in descriptions among humans, but the models perform more consistently. Humans often vary in their descriptions of complex videos due to personal experiences, emotions, cultural backgrounds, and individual preferences, which can make their descriptions differ significantly. In contrast, LVLMs tend to be more consistent in their descriptions. These models are trained on vast datasets with the goal of learning a more universal, standardized way of describing. The training of these models typically focuses on identifying and describing visual elements that are widely recognized in most contexts, unaffected by individual traits. Thus, these models exhibit higher consistency and predictability in generating descriptions.</pre>
+              </p>
+            </div>
+          </div>
+
+          <div id="example_4" class="content-section"  style="display:none">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa15.png" alt="Figure A15">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">The performance of the various models was relatively poor in describing this video. In this video, the performance of the models was unsatisfactory due to the depiction of a woman immersed in her fantasies. The content of the fantasies and the environment around the woman contain many details, such as camera transitions and temporal discontinuities. These complex elements make it difficult for the models to accurately interpret and describe the video, resulting in an overall description that is not clear or easy to understand.</pre>
+              </p>
+            </div>
+          </div>
+
+
+          <div id="example_5" class="content-section"  style="display:none">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa16.png" alt="Figure A16">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">The models all demonstrated strong descriptive abilities for this video. Typically, models excel in describing videos with simple scenes, such as this one showcasing Brazilian Jiu-Jitsu practice, featuring stable camera work and clear temporal relationships. When dealing with clear and structured video content, the models are better able to accurately recognize and describe the activities and actions within the scene.</pre>
+              </p>
+            </div>
+          </div>
+
+          <div id="example_6" class="content-section"  style="display:none">
+            <br />
+            <div class="content has-text-justified">
+              <div class="columns is-centered">
+                <figure>
+                  <img src="static/images/fa17.png" alt="Figure A17">
+                </figure>
+            </div>
+              <p>
+                <b>Analysis:</b><br>
+                <pre style="white-space: pre-wrap; word-break: keep-all;">In the six LVLMs, ShareGPT4Video exhibits more severe hallucination issues, as shown in the image with its generation of a large amount of redundant and irrelevant descriptions.</pre>
+              </p>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+      <!-- <br>
+      <div style="text-align:center">
+        <h2 class="title is-3">Acknowledgement</h2>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+          <p>This material is based upon work supported by the  U.S. Department of Homeland Security under Grant Award Number 17STQAC00001-07-04, and the Office of the Director of National Intelligence (ODNI), Intelligence Advanced Research Projects Activity (IARPA), via the HIATUS Program contract #2022-22072200001, NSF SaTC-2241068, a Cisco Research Award, a Microsoft Accelerate Foundation Models Research Award. The views and conclusions contained in this document are those of the authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the U.S. Department of Homeland Security, ODNI, IARPA, or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for governmental purposes notwithstanding any copyright annotation therein.
+
+          </p>
+
+      </div>
+    </div> -->
+
+    
+  <!-- </section>
+  <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chen2024llmgenerated,
+      title={Can {LLM}-Generated Misinformation Be Detected?},
+      author={Canyu Chen and Kai Shu},
+      booktitle={The Twelfth International Conference on Learning Representations},
+      year={2024},
+      url={https://openreview.net/forum?id=ccxD4mtkTU}
+      }</code></pre>
+  </div>
+</section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+            <p>
+              The templete of this webpage is based on <a href="https://llm-misinformation.github.io/">LLMs Meet Misinformation</a> project, thanks a lot for their good project webpage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- Default Statcounter code for llm https://huuuuusy.github.io/fiova/ -->
+<script type="text/javascript">
+  var sc_project=12925671; 
+  var sc_invisible=1; 
+  var sc_security="9b4ba758"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img class="statcounter"
+  src="https://c.statcounter.com/12925671/0/9b4ba758/1/" alt="Web Analytics"
+  referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+</body>
+<script>
+  function changeContent() {
+    const dropdown = document.getElementById("dropdown");
+    const selected = dropdown.value;
+    const sections = ["example_1", "example_2", "example_3", "example_4", "example_5", "example_6"];
+
+    sections.forEach((section) => {
+      document.getElementById(section).style.display = (section === selected) ? "block" : "none";
+    });
+  }
+</script>
+
+
+
+
+</html>

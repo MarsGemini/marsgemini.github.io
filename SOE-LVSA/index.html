@@ -322,21 +322,57 @@
       
       
         <div style="text-align:center">
-        <h2 class="title is-3">Overall Evaluation for LVLMs</h2>
+        <h2 class="title is-3">Evaluation: Analysis of object capabilities in scenes</h2>
       </div>
       <div class="content has-text-justified">
         <br>
-        <p>In the overall evaluation, we assess the performance of six LVLMs—VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video—using traditional metrics such as BLEU, GLEU, and METEOR, as well as the AutoCQ framework, which focuses on event-based evaluation. The results show that while models like Tarsier and VideoLLaMA2 excel in covering key events, they often struggle with descriptive precision and omit important details. On the other hand, ShareGPT4Video achieved the highest precision but lacked comprehensiveness, frequently omitting crucial information. The findings highlight the trade-off between accuracy and completeness, underscoring the need for models that can both capture critical events and provide detailed, fluent descriptions.</p>
+        <p>We comprehensively evaluate the LVSA by constructing a subjective evaluation dataset. The dataset construction process comprises inference dataset creation, fine-tuned inference, direct inference, and evaluation data reconstruction. The evaluation process consists of human evaluation, human-GPT-4 comparison evaluation, and large-scale GPT-4 evaluation to adress three key research questions in our study.</p>
       </div>
       <div class="columns is-centered">
           <figure>
-            <img src="static/images/t2.png" alt="Table 2">
+            <img src="static/images/t2.png" alt="Figure 6">
           </figure>
       </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Subjective Evaluation Dataset: </b>The Subjective Evaluation Dataset was constructed through a four-step process: (1) inference dataset creation, (2) fine-tuned inference, (3) direct inference, and (4) dataset reconstruction for evaluation. This dataset supports both human and GPT-4 assessments. A total of 12,312 responses were generated across four foundational models and five personality traits, covering various learning stages and question types. For human evaluation, 115 samples were randomly selected, including both fine-tuned and direct inference responses, as well as real student responses for comparison. These evaluations provided insights into the realism and effectiveness of LVSA.</p>
+      </div>
+
+      <div class="research-box">
+        <strong>Research Question2: </strong> <em>Are the LVSA easily recognizable by humans?</em>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Human Turing Test: </b>The Human Turing Test aimed to assess whether human evaluators could distinguish between LVSA-generated dialogues and real student responses. Participants, acting as judges, evaluated 120 teacher-student dialogues while verbalizing their thought processes. Fleiss’s Kappa score of 0.6917 indicated substantial agreement among participants, with fine-tuned LVSA achieving an average recognition rate above 90%, closely resembling real students. In some cases, LVSA with traits like high neuroticism, low conscientiousness, and low openness were more difficult to distinguish from real students, demonstrating the effectiveness of the models in emulating human-like language behaviors.</p>
+      </div>
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/HTT_result.png" alt="Table 1">
+        </figure>
+      </div>
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/radar-he_00.png" alt="Figure 7">
+        </figure>
+      </div>
+
+      <div class="columns is-centered">
+        <figure>
+          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+        </figure>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>HUman-GPT4 Comparison Validation: </b>In the Human-GPT4 Comparison Validation, GPT-4's evaluation capabilities were compared to human evaluators by integrating interview data covering emotional integration, cognitive level, psychological state, and verbal expression into its prompts. Using a chain-of-thought (CoT) approach, GPT-4 achieved an average evaluation score of 0.978, closely aligning with human judgments across five personality traits. The overall Fleiss’s Kappa of 0.6806 indicated substantial agreement between GPT-4 and human evaluators, confirming GPT-4’s reliability in assessing virtual student responses.</p>
+      </div>
+
+    </div>
+
+      
       <br>
 
       <div style="text-align:center">
-        <h2 class="title is-3">Batch Score Evaluation for LVLMs</h2>
+        <h2 class="title is-3">Bad Case Analysis</h2>
       </div>
       <div class="content has-text-justified">
         <br>
@@ -349,20 +385,6 @@
       </div>
       <br>
 
-
-      <div style="text-align:center">
-        <h2 class="title is-3">Batch Ranking for LVLMs and Humans</h2>
-      </div>
-      <div class="content has-text-justified">
-        <br>
-        <p>The batch ranking for LVLMs is based on calculating the coefficient of variation (CV) across different video groups to assess performance consistency. Results show that in simpler videos (Groups A and B), models exhibited higher variability, reflecting divergent strategies. As complexity increased (Groups F to H), CV values decreased, indicating more consistent but less diverse outputs. Human annotations were more consistent in simpler videos, while models outperformed humans in consistency for the most complex videos (Group H). This analysis highlights how models tend to adopt uniform strategies in complex situations, while human descriptions are more diverse. Tarsier ranked highest overall, particularly in handling complex scenarios, while ShareGPT4Video excelled in precision but sacrificed completeness in complex videos. This analysis highlights the trade-off between precision and recall, emphasizing the need for balanced models that can handle diverse video content effectively.</p>
-      </div>
-      <div class="columns is-centered">
-          <figure>
-            <img src="static/images/f8.png" alt="Figure 8">
-          </figure>
-      </div>
-      <br>
 
       <br />
       <div class="columns is-centered">

@@ -3,18 +3,18 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="FIOVA (Five-in-One Video Annotations) Benchmark">
-  <meta name="keywords" content="Video Caption, Video Understanding, LVLM Evaluation, Human-machine Comparison">
+  <meta name="description" content="SOE (Secen-Object-Evaluation) AI4Edu Pipeline for LVSA (LLM-based Virtual Student Agents)">
+  <meta name="keywords" content="AI for Education, Large Language Models, LLM-based Agent, Teacher Training">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FIOVA (Five-in-One Video Annotations) Benchmark</title>
+  <title>SOE (Scene-Object-Evaluation) AI4Edu Pipeline for LVSA (LLM-based Virtual Student Agents)</title>
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <!-- <meta name="generator" content="Jekyll v3.9.3" /> -->
-<meta property="og:title" content="FIOVA (Five-in-One Video Annotations) Benchmark" />
+<meta property="og:title" content="SOE (Scene-Object-Evaluation) Ai4Edu Pipeline for LVSA (LLM-based Virtual Student Agents)" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://huuuuusy.github.io/fiova/" />
-<meta property="og:url" content="https://huuuuusy.github.io/fiova/" />
-<meta property="og:site_name" content="FIOVA (Five-in-One Video Annotations) Benchmark" />
+<link rel="canonical" href="https://marsgemini.github.io/SOE-LVSA/" />
+<meta property="og:url" content="https://marsgemini.github.io/SOE-LVSA/" />
+<meta property="og:site_name" content="SOE (Scene-Object-Evaluation) AI4Edu Pipeline for LVSA (LLM-based Virtual Student Agents)" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://huuuuusy.github.io/fiova/static/images/logo.png" />
 <!-- <meta name="twitter:card" content="summary" />
@@ -70,9 +70,9 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <img src="static/images/logo_1.png" alt="FIOVA (Five-in-One Video Annotations) Benchmark" width="900"/>
-            <h1 class="title is-4 publication-title">This initiative aims to evaluate the gap between human and machine video understanding by benchmarking LVLMs against comprehensive human annotations.
+            <h1 class="title is-4 publication-title">This initiative aims to evaluate the role-playing potential of the LLMs in constructing human-liked and personalised virtual students by proposing a AI4Edu Pipeline for modeling LLM-based virtual student agents.
             </h1>
-            <h1 class="title is-5 publication-title">(Contact: <a href="https://huuuuusy.github.io/" target="_blank">Shiyu Hu</a> and <a href="https://xuchen-li.github.io/" target="_blank">Xuchen Li</a>)
+            <h1 class="title is-5 publication-title">(Contact: <a href="https://marsgemini.github.io/" target="_blank">Yiping Ma</a> and <a href="https://huuuuusy.github.io/" target="_blank">Shiyu Hu</a>)
             </h1>
 
             <div class="columns is-centered has-text-centered">
@@ -82,7 +82,7 @@
               Latest News
             </h2>
                 <li>
-                    [2024.10.18] The home page has been released! More information will be available soon.
+                    [2024.10.20] The home page has been released! More information will be available soon.
                 </li>
             </div>
             </div>
@@ -101,21 +101,21 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 id="Can-LVLMs-Describe-Videos-Like-Humans" class="title is-2 publication-title">Can LVLMs Describe Videos Like Humans? A Five-in-One Video Annotations Benchmark
+            <h1 id="Students Rather Than Experts" class="title is-2 publication-title">Students Rather Than Experts: A New Ai For Education Pipeline To Model More Human-Like And Personalised Early Adolescences
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
+                <a href="https://marsgemini.github.io/">Yiping Ma*</a>,</span>
+              <span class="author-block">
                 <a href="https://huuuuusy.github.io/">Shiyu Hu*</a>,</span>
               <span class="author-block">
-                <a href="https://xuchen-li.github.io/">Xuchen Li*</a>,</span>
-              <span class="author-block">
-                <a href="https://xuzhaoli.github.io/">Xuzhao Li</a>,</span>
+                <a href="https://xuchen-li.github.io/">Xuchen Li</a>,</span>
               <span class="author-block">
                 Jing Zhang,</span>
               <span class="author-block">
                 <a href="https://github.com/updateforever">Yipei Wang</a>,</span>
               <span class="author-block">
-                <a href="https://www.xinzhaoai.com/">Xin Zhao✉️</a>,</span>
+                <a href="http://www.dedu.ecnu.edu.cn/_s202/49/fb/c7105a84475/page.psp/">Shiqing Liu✉️</a>,</span>
               <span class="author-block">
                 <a href="https://dr.ntu.edu.sg/cris/rp/rp02319">Kang Hao Cheong✉️</a></span>
             </div>
@@ -253,7 +253,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>Large vision-language models (LVLMs) have made significant strides in addressing complex video tasks, sparking researchers' interest in their human-like multimodal understanding capabilities. Video description serves as a fundamental task for evaluating video comprehension, necessitating a deep understanding of spatial and temporal dynamics, which presents challenges for both humans and machines. Thus, investigating <b>whether LVLMs can describe videos as comprehensively as humans</b>—through reasonable human-machine comparisons using video captioning as a proxy task—will enhance our understanding and application of these models. However, current benchmarks for video comprehension have notable limitations, including short video durations, brief annotations, and reliance on a single annotator's perspective. These factors hinder a comprehensive assessment of LVLMs' ability to understand complex, lengthy videos and prevent the establishment of a robust human baseline that accurately reflects human video comprehension capabilities. To address these issues, we propose a novel benchmark, <b>FIOVA</b> (<b>F</b>ive <b>I</b>n <b>O</b>ne <b>V</b>ideo <b>A</b>nnotations), designed to evaluate the differences between LVLMs and human understanding more comprehensively. FIOVA includes 3,002 long video sequences (averaging 33.6 seconds) that cover diverse scenarios with complex spatiotemporal relationships. Each video is annotated by five distinct annotators, capturing a wide range of perspectives and resulting in captions that are 4~15 times longer than existing benchmarks, thereby establishing a robust baseline that represents human understanding comprehensively for the first time in video description tasks. Using the FIOVA benchmark, we conducted an in-depth evaluation of six state-of-the-art LVLMs (VideoLLaMA2, LLaVA-NEXT-Video, Video-LLaVA, VideoChat2, Tarsier, and ShareGPT4Video), comparing their performance with humans. Results show that while current LVLMs demonstrate some perception and reasoning capabilities, they still struggle with information omission and descriptive depth. Moreover, we found significant discrepancies between LVLMs and humans in complex videos, particularly where human annotators exhibited substantial disagreement, whereas LVLMs tended to rely on uniform strategies for challenging content. These findings underscore the limitations of using a single human annotator as the groundtruth for evaluation and highlight the need for new evaluation perspectives. We believe this work offers valuable insights into the differences between LVLMs and humans, ultimately guiding future advancements toward human-level video comprehension.
+            <p>The capabilities of large language models (LLMs) have been applied in expert systems across various domains, providing new opportunities for AI in Education (AI4Education). Educational interactions involve a cyclical exchange between teachers and students. Current research predominantly focuses on using LLMs to simulate teachers, leveraging their expertise to enhance student learning outcomes. However, the simulation of students, which could improve teachers' instructional skills, has received insufficient attention due to the challenges of modeling and evaluating virtual students. This research poses the question: “\textit{Can LLMs be utilized to develop virtual student agents that mimic human-like behavior and individual variability?}” Unlike expert systems focusing on knowledge delivery, virtual students must replicate learning difficulties, emotional responses, and linguistic uncertainties. These traits present significant challenges in both modeling and evaluation. To address these issues, this study focuses on language learning as a context for modeling virtual student agents. We propose a novel AI4Education framework, termed **SOE** (**S**cene - **O*bject - \textbf{E}valuation), to systematically construct \textbf{LVSA} (\textbf{L}LM-based \textbf{V}irtual \textbf{S}tudent \textbf{A}gents). By curating a dataset of personalized teacher-student interactions with various personality traits, question types, and learning stages, and fine-tuning LLMs using LoRA, we conduct multi-dimensional evaluation experiments. Specifically, we: (1) develop a theoretical framework for generating LVSA; (2) integrate human subjective evaluation metrics into GPT-4 assessments, demonstrating a strong correlation between human evaluators and GPT-4 in judging LVSA authenticity; and (3) validate that LLMs can generate human-like, personalized virtual student agents in educational contexts, laying a foundation for future applications in pre-service teacher training and multi-agent simulation environments.
             </p>
           </div>
         </div>

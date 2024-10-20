@@ -287,10 +287,17 @@
       </figure>
       <div class="content has-text-justified">
         <br>
-        <p>We investigated the potential of four foundational models—InternVL, LLaVa, MiniCPM, and Qwen—to simulate student performance in junior high school Chinese education, focusing on early adolescence (ages 10-15), a phase marked by the transition from concrete to abstract thinking and associated cognitive and linguistic challenges. Junior high school Chinese education emphasizes expression, emotional experience, and value formation, aligning well with LLMs' strengths in natural language processing. This context provides an ideal setting to evaluate whether virtual student models can authentically replicate human-like performance, including language style, emotional responses, and value-driven interactions. Thus, our primary research question is: <em><b>Do foundation models possess basic comprehension abilities for middle school language subjects?</b></em></p>
-        <p>To answer this question, we first built the Basic Chinese Understanding Ability Dataset, sourced from the National Smart Education Platform, which measures text comprehension (613 items) and memorization (438 items) skills. Results show that (1) InternVL achieved the highest average accuracy (0.747), followed by MiniCPM (0.700), while Qwen and LLaVa averaged 0.599 and 0.444, respectively. (2) The lower performance of Qwen and LLaVa likely reflects their design focus on multimodal tasks, limiting their effectiveness in Chinese language processing.</p>
+        <p>We investigated the potential of four foundational models—InternVL, LLaVa, MiniCPM, and Qwen—to simulate student performance in junior high school Chinese education, focusing on early adolescence (ages 10-15), a phase marked by the transition from concrete to abstract thinking and associated cognitive and linguistic challenges. Junior high school Chinese education emphasizes expression, emotional experience, and value formation, aligning well with LLMs' strengths in natural language processing. This context provides an ideal setting to evaluate whether virtual student models can authentically replicate human-like performance, including language style, emotional responses, and value-driven interactions. Thus, our primary research question is:</p>
+      </div>
+      <div class="research-box">
+        <strong>Research Question1: </strong> <em>Do foundation models possess basic comprehension abilities for middle school language subjects?</em>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p>To answer this question, we first built the Basic Chinese Understanding Ability Dataset, sourced from the National Smart Education Platform, which measures text comprehension (613 items) and memorization (438 items) skills. <b><em>Results show that (1) InternVL achieved the highest average accuracy (0.747), followed by MiniCPM (0.700), while Qwen and LLaVa averaged 0.599 and 0.444, respectively. (2) The lower performance of Qwen and LLaVa likely reflects their design focus on multimodal tasks, limiting their effectiveness in Chinese language processing.</em></b></p>
 
       </div>
+
       <div class="columns is-centered">
         <!-- <img style='height: auto; width: 90%; object-fit: contain' src="static/images/f2.png"
           alt="overview_image"> -->
@@ -379,7 +386,7 @@
       </div>
       <div class="columns is-centered">
         <figure>
-          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+          <img src="static/images/LVSA_result.png" alt="Table 3">
         </figure>
       </div>
       <div class="content has-text-justified">
@@ -389,20 +396,18 @@
       </div>
       <div class="columns is-centered">
         <figure>
-          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+          <img src="static/images/Learningstage_result.png" alt="Table 4">
         </figure>
       </div>
       <div class="content has-text-justified">
         <br>
-        <p><b>Evaluation results for different LVSA types: </b>In the Human-GPT4 Comparison Validation, GPT-4's evaluation capabilities were compared to human evaluators by integrating interview data covering emotional integration, cognitive level, psychological state, and verbal expression into its prompts. Using a chain-of-thought (CoT) approach, GPT-4 achieved an average evaluation score of 0.978, closely aligning with human judgments across five personality traits. The overall Fleiss’s Kappa of 0.6806 indicated substantial agreement between GPT-4 and human evaluators, confirming GPT-4’s reliability in assessing virtual student responses.</p>
+        <p><b>Evaluation results for different question types: </b>The paired t-test P-values for closed, open, and overall questions were 0.015, 0.006, and 0.009, respectively—all below the 0.05 threshold—indicating statistically significant improvements. The differences in model performance between closed and open questions are likely due to inherent variations in complexity. Closed questions require specific factual recall, benefiting from structured dataset pretraining, while open questions involve creative reasoning, posing greater challenges. <b><em>These findings suggest that fine-tuning enhances adaptability and response quality, particularly for tasks requiring sophisticated reasoning and creativity</em></b>.</p>
       </div>
       <div class="columns is-centered">
         <figure>
-          <img src="static/images/HTT_GPT4.png" alt="Table 2">
+          <img src="static/images/Questiontypes_result.png" alt="Table 5">
         </figure>
       </div>
-
-
     </div>
 
       
@@ -413,12 +418,15 @@
       </div>
       <div class="content has-text-justified">
         <br>
-        <p>The batch score evaluation divides the dataset into eight sub-groups based on the complexity and variability of video descriptions. We rank the LVLMs across these groups, analyzing their ability to handle both simple and complex videos. Tarsier consistently performs well in capturing temporal changes and maintaining coherence, especially in groups with frequent scene transitions. However, all models show a significant performance drop when dealing with the most complex videos (Group H), characterized by high variability in human annotations. This evaluation results based on various sub-groups and metrics highlight the models' varying strategies—some prioritize completeness, while others focus on precision—demonstrating the need for balanced models capable of handling diverse video scenarios.</p>
+        <p><b>Poor fine-tuning performance of LC LVSA: </b>The limited performance of LC virtual students can be attributed to the sparse distribution of relevant data. Expressions and behaviors typical of low-conscientiousness students are underrepresented in the original training data, making it difficult for models to learn these traits accurately. This scarcity leads to a higher likelihood of “hallucination,” where generated responses lack semantic coherence. Furthermore, LLMs are generally designed to avoid promoting negative traits associated with antisocial performance, further complicating the modeling of this personality type.</p>
       </div>
-      <div class="columns is-centered">
-          <figure>
-            <img src="static/images/f7.png" alt="Figure 7">
-          </figure>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Inconsistent fine-tuning effects across question types: </b>Although all four models improved in handling both closed and open-ended questions, none achieved statistically significant improvements across both types. This inconsistency likely stems from inherent differences in cognitive demands. Closed-ended questions are more structured, making them easier for models to manage, whereas open-ended questions require deeper reasoning and creative thinking, resulting in greater variability in performance.</p>
+      </div>
+      <div class="content has-text-justified">
+        <br>
+        <p><b>Suboptimal fine-tuning performance of LLaVa: </b>Despite improvements in personalization, question types, and learning stages, LLaVa’s overall performance remained weaker than that of others. This disparity is primarily due to differences between pre-training and finetuning data domains, particularly cross-language issues. Given that LLaVa predominantly relies on English pre-training data, its adaptability and generalization to Chinese contexts are constrained.</p>
       </div>
       <br>
 
@@ -593,7 +601,7 @@
               you do not want on your website.
             </p>
             <p>
-              The templete of this webpage is based on <a href="https://llm-misinformation.github.io/">LLMs Meet Misinformation</a> project, thanks a lot for their good project webpage.
+              The templete of this webpage is based on <a href="https://llm-misinformation.github.io/">LLMs Meet Misinformation</a> and <a href="https://huuuuusy.github.io/fiova/">FIOVA(Five-in-One Video Annotations) Benchmark</a> projects, thanks a lot for their good project webpages.
             </p>
           </div>
         </div>
@@ -601,7 +609,7 @@
     </div>
   </footer>
 
-<!-- Default Statcounter code for llm https://huuuuusy.github.io/fiova/ -->
+<!-- Default Statcounter code for llm https://marsgemini.github.io/SOE-LVSA/ -->
 <script type="text/javascript">
   var sc_project=12925671; 
   var sc_invisible=1; 

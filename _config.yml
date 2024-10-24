@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://marsgemini.github.io/yipingblog.github.io"
 
 github:
-  username: Marsgemini # change to your GitHub username
+  username: Marsgemini
 
 twitter:
   username: Marsgemini # change to your Twitter username

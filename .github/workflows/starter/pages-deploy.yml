@@ -4,10 +4,16 @@ on:
     branches:
       - main
       - master
+      - full-version
     paths-ignore:
       - .gitignore
       - README.md
       - LICENSE
+  pull_request:
+    branches:
+      - main
+      - master
+      - full-version
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
